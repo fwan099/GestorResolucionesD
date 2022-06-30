@@ -1,0 +1,27 @@
+:root{
+    --bg-main:#4C7295;
+    --bg-main-2:rgb(56, 212, 121);
+}
+
+*{
+	font-family:'Roboto';
+}
+.login-input::placeholder{
+    color: #bbb;
+}
+body{
+    background-color: var(--bg-main);
+    height: 90vh;; 
+}
+.btn-lite{
+    background-color: var(--bg-main-2);
+    color: white;;
+}
+.btn-lite:hover{
+    background-color: #4C7295;
+    color: var(--bg-main-2);
+}
+.btn-lite:focus{
+    background-color: red;
+    color: white;
+}
