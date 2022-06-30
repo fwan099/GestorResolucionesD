@@ -1,2 +1,2 @@
 <?php
-echo 'desdel el modelo';
+echo 'desdel el modelo ggf';
