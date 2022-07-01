@@ -1,0 +1,14 @@
+Git: Trabajar remotamente desde otra pc con el mismo repositorio
+1. Crea una carpeta en el htdocs
+2. Instale git en la PC
+3. git clone https://github.com/fwan099/GestorResolucionesD.git
+4. git status
+5. git add .
+6. git commit -m "message"
+7. git push
+
+Si te pide credenciales es mediante token.
+pero antes se deve introducir los su¿guientes comandos.
+ 1. git config --globa -e  (para saber con usuario esta el git)
+2. git config --gobal user.email "correo"
+3. git config --global user.name "usuario"
