@@ -12,3 +12,4 @@ pero antes se deve introducir los su¿guientes comandos.
  1. git config --globa -e  (para saber con usuario esta el git)
 2. git config --gobal user.email "correo"
 3. git config --global user.name "usuario"
+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
