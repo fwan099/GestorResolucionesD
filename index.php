@@ -1,2 +1,2 @@
 <?php
-header('Location: views/plantilla.php');
+header('Location: views/index.php');
