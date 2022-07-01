@@ -1,5 +1,2 @@
 <?php
-require_once "controllers/plantillaC.php";
-
-$plantilla = new PlantillaC();
-$plantilla -> LlamarPlantilla();
+header('Location: views/plantilla.php');
