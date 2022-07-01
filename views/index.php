@@ -28,6 +28,5 @@
             </div>
         </div>
     </div>
-    <h1>Freddy Walter</h1>
 </body>
 </html>
