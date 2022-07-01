@@ -15,7 +15,7 @@
         <h3 class="text-center text-white pt-4 text-roboto">SISTEMA DE GESTOR DE RESOLUCIONES DIRECTORALES - UGEL YUNGUYO</h3>
         <div class="row justify-content-center align-items-center h-75">
             <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4">
-                <form>
+                <form class="bg-login p-4 rounded-3">
                     <h4 class="text-center text-white pb-3 text-roboto">Iniciar Sesion</h4>
                     <div class="form-group mb-4">
                       <input type="email" class="form-control login-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario">
