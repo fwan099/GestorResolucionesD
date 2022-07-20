@@ -7,17 +7,18 @@
 
 				$datosC = array("usuario"=>$_POST["usuario-ing"],"clave"=>$_POST["clave-ing"]);
 
-				$tablaDB = "usuarios";
+				$tablaDB = "usuario";
 
 				$respuesta = UsuariosM::IngresarUsuariosM($datosC, $tablaDB);
 
-				if($respuesta["usuario"]==$_POST["usuario-ing"] && $respuesta["contraseña"]==$_POST["clave-ing"]  ){
+				if($respuesta["usuario"]==$_POST["usuario-ing"] && $respuesta["clave"]==$_POST["clave-ing"]  ){
 
 					$_SESSION["Ingreso"]=true;
 
-					$_SESSION["id"]=$respuesta["id"];
+					$_SESSION["id_usuario"]=$respuesta["id_usuario"];
 					$_SESSION["usuario"]=$respuesta["usuario"];
 					$_SESSION["clave"]=$respuesta["clave"];
+					$_SESSION["id_rol"]=$respuesta["id_rol"];
 
 
 					echo '<script> 
@@ -27,7 +28,9 @@
 
 					</script>';
 				}else{
-					echo '<div style="text-align: center;padding-top:8px;"><b style="color:#BC1817;">ERROR AL INGRESAR</b></div>';
+					echo '<div class="alert alert-danger text-center" role="alert">
+  							Ups! Usuario o contraseña incorrecta
+						</div>';
 				}
 			}
 		}

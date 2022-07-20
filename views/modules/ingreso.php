@@ -15,6 +15,10 @@
         <h3 class="text-center text-white pt-4 text-roboto">SISTEMA DE GESTOR DE RESOLUCIONES DIRECTORALES - UGEL YUNGUYO</h3>
         <div class="row justify-content-center align-items-center h-75">
             <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4">
+                <?php
+                        $ingreso = new UsuariosC();
+                        $ingreso-> IngresoUsuariosC();
+                    ?>
                 <form class="bg-login p-4 rounded-3" method="post">
                     <h4 class="text-center text-white pb-3 text-roboto">Iniciar Sesion</h4>
                     <div class="form-group mb-4">
@@ -24,10 +28,7 @@
                       <input type="password" class="form-control login-input" name="clave-ing" id="exampleInputPassword1" placeholder="Contraseña">
                     </div>
                     <button type="submit" class=" form-control btn btn-lite">Ingresar</button>
-                    <?php
-                        $ingreso = new UsuariosC();
-                        $ingreso-> IngresoUsuariosC();
-                    ?>
+                    
                   </form>
             </div>
         </div>

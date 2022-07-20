@@ -11,8 +11,7 @@ session_start();
     <title>Inicio de Sesion</title>
     <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Roboto+Mono:wght@100;200&family=Roboto:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./views/public/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./views/public/css/estilos.css">
-    
+    <link rel="stylesheet" href="./views/public/css/estilos.css"> 
 </head>
 <body>
     <?php
@@ -21,7 +20,7 @@ session_start();
             include "modules/menu.php";
 
             if(isset($_GET["url"])){
-                if($_GET["url"]=="hola"){
+                if($_GET["url"]=="salir"){
                     include "modules/".$_GET["url"].".php";
                 }
 
@@ -33,6 +32,13 @@ session_start();
         }
 
     ?>
+
+
+
+
+<script type="text/javascript" src="./views/public/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="./views/public/js/main.js"></script>
+<script src="https://kit.fontawesome.com/bd7b24f1e0.js" crossorigin="anonymous"></script>
     
 </body>
 </html>
