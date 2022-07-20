@@ -11,7 +11,7 @@
 
 				$respuesta = UsuariosM::IngresarUsuariosM($datosC, $tablaDB);
 
-				if($respuesta["usuario"]==$_POST["usuario-ing"] &&$respuesta["clave"]==$_POST["clave-ing"]  ){
+				if($respuesta["usuario"]==$_POST["usuario-ing"] && $respuesta["contraseña"]==$_POST["clave-ing"]  ){
 
 					$_SESSION["Ingreso"]=true;
 
