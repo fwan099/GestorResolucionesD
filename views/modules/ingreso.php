@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Roboto+Mono:wght@100;200&family=Roboto:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./views/public/css/bootstrap.min.css">
     <link rel="stylesheet" href="./views/public/css/estilos.css">
+    <link rel="stylesheet" href="./views/public/css/sliderbar.css">
     
 </head>
 <body>
