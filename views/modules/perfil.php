@@ -27,7 +27,7 @@
 			  <tbody>
 			    <tr>
 			      <th scope="row">1</th>
-			      <td>Admin</td>
+			      <td>AdminS</td>
 			      <td>321</td>
 			      <td><button class="btn btn-success " ><i class="fas fa-pencil-alt" data-toggle="modal" data-target="#EditarU"></i></button></td>
 			    </tr>

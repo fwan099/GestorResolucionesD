@@ -35,7 +35,7 @@
 			      <td>FREDDY WALTER</td>
 			      <td>HUAYNAPATA</td>
 			      <td>UCHARICO</td>
-			      <td>73744393</td>
+			      <td>73744393S</td>
 			      <td><button class="btn btn-success" ><i class="fas fa-pencil-alt" data-toggle="modal" data-target="#EditarU"></i></button></td>
 			      <td><button class="btn btn-danger" ><i class="fa-solid fa-trash-can" data-toggle="modal" data-target="#EditarU"></i></button></td>
 			    </tr>

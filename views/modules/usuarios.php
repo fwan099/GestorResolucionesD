@@ -31,7 +31,7 @@
 			    <tr>
 			      <th scope="row">1</th>
 			      <td>Admin</td>
-			      <td>321</td>
+			      <td>32A1</td>
 			      <td><button class="btn btn-success" ><i class="fas fa-pencil-alt" data-toggle="modal" data-target="#EditarU"></i></button></td>
 			       <td><button class="btn btn-danger" ><i class="fa-solid fa-trash-can" data-toggle="modal" data-target="#EditarU"></i></button></td>
 			    </tr>

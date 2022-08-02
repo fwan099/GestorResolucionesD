@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Busqueda de Resoluciones
+        Busqueda de Resolucion Directoral
       </h1>
      
     </section>
