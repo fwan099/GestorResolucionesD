@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./views/public/css/sliderbar.css">
     
 </head>
-<body>
+<body class="body">
     <div class="container h-100">
         <h3 class="text-center text-white pt-4 text-roboto">SISTEMA DE GESTOR DE RESOLUCIONES DIRECTORALES - UGEL YUNGUYO</h3>
         <div class="row justify-content-center align-items-center h-75">

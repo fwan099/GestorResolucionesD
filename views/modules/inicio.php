@@ -1,3 +1,1 @@
-<?php
-echo 'Ingreso al inicio';
-?>
+<p class="text-danger">hxcvszxxxxxxcxzzzzzzzzzzzzzzzzola</p>
