@@ -14,7 +14,7 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#RegistrarPersonal">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#RegistrarResolucion">
            Registrar Resolucion
           </button>
         </div>
@@ -56,3 +56,56 @@
   </div>
   <!-- /.content-wrapper -->
 </div>
+
+<!-- Modal crar presolucion -->
+<div class="modal fade" role="dialog" id="RegistrarResolucion">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form method="post" role="form" enctype="multipart/form-data">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Registrar Resolucion</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="box-body">
+              <div class="form-group">
+                <h5>Personal</h5>
+                <input type="text" class="form-control " name="nombresN" required>
+              </div>
+              <div class="form-group">
+                <h5>Numero de Resolucion</h5>
+                <input type="text" class="form-control " name="nombresN" required>
+              </div>
+              <div class="form-group">
+                <h5>Fecha</h5>
+                <input type="date" class="form-control " name="nombresN" required>
+              </div>
+              <div class="form-group">
+                <h5>Motivo </h5>
+                <input type="text" class="form-control " name="nombresN" required>
+              </div>
+              <div class="form-group">
+              <h5>Documento</h5>
+              <input type="file" name="documentoN">
+              <p class="help-block">Peso máximo permitido 2MB</p>
+
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Crear</button>
+             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            
+          </div>
+          
+        </form>
+        
+      </div>
+      
+    </div>
+    
+    
+  </div>

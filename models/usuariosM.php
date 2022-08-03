@@ -12,5 +12,7 @@ class UsuariosM extends ConexionDB{
 
 		$pdo->close();
 	}
+
+	
 }
 ?>

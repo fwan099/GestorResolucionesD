@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-08-2022 a las 02:28:45
+-- Tiempo de generación: 03-08-2022 a las 17:19:29
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -52,24 +52,6 @@ CREATE TABLE `resolucion` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `rol`
---
-
-CREATE TABLE `rol` (
-  `id_rol` int(11) NOT NULL,
-  `rol` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `rol`
---
-
-INSERT INTO `rol` (`id_rol`, `rol`) VALUES
-(1, 'Administrador');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `tipo_resolucion`
 --
 
@@ -88,15 +70,15 @@ CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL,
   `usuario` varchar(45) DEFAULT NULL,
   `clave` varchar(45) DEFAULT NULL,
-  `id_rol` int(11) NOT NULL
+  `rol` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `usuario`, `clave`, `id_rol`) VALUES
-(1, 'admin1', '321', 1);
+INSERT INTO `usuario` (`id_usuario`, `usuario`, `clave`, `rol`) VALUES
+(1, 'admin1', '321', 'Administrador');
 
 --
 -- Índices para tablas volcadas
@@ -117,12 +99,6 @@ ALTER TABLE `resolucion`
   ADD KEY `fk_resolucion_tipo_resolucion1` (`id_tipo_resolucion`);
 
 --
--- Indices de la tabla `rol`
---
-ALTER TABLE `rol`
-  ADD PRIMARY KEY (`id_rol`);
-
---
 -- Indices de la tabla `tipo_resolucion`
 --
 ALTER TABLE `tipo_resolucion`
@@ -132,8 +108,7 @@ ALTER TABLE `tipo_resolucion`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_usuario`),
-  ADD KEY `fk_usuario_rol1` (`id_rol`);
+  ADD PRIMARY KEY (`id_usuario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -150,12 +125,6 @@ ALTER TABLE `personal`
 --
 ALTER TABLE `resolucion`
   MODIFY `id_resolucion` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `rol`
---
-ALTER TABLE `rol`
-  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_resolucion`
@@ -179,12 +148,6 @@ ALTER TABLE `usuario`
 ALTER TABLE `resolucion`
   ADD CONSTRAINT `fk_resolucion_personal` FOREIGN KEY (`id_personal`) REFERENCES `personal` (`id_personal`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_resolucion_tipo_resolucion1` FOREIGN KEY (`id_tipo_resolucion`) REFERENCES `tipo_resolucion` (`id_tipo_resolucion`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD CONSTRAINT `fk_usuario_rol1` FOREIGN KEY (`id_rol`) REFERENCES `rol` (`id_rol`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
