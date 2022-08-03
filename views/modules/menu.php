@@ -3,6 +3,15 @@
     <nav class="main-menu">
                 <ul>
                     <li>
+                        <a href="inicio">
+                            <i class="fa fa-home fa-2x"></i>
+                            <span class="nav-text">
+                                Inicio
+                            </span>
+                        </a>
+                      
+                    </li>
+                    <li>
                         <a href="buscarRes">
                             <i class="fa fa-search fa-2x"></i>
                             <span class="nav-text">

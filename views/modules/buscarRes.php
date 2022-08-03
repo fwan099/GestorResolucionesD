@@ -2,9 +2,9 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
+      <h3>
         Busqueda de Resolucion Directoral
-      </h1>
+      </h3>
      
     </section>
 
@@ -14,7 +14,7 @@
       <!-- Default box -->
       <div class="box">
       
-        <div class="box-body" style="overflow: auto;">
+        <div class="box-body py-3" style="overflow: auto;">
           <table class="table">
 			  <thead>
 			    <tr>

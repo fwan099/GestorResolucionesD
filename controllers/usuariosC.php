@@ -18,7 +18,7 @@
 					$_SESSION["id_usuario"]=$respuesta["id_usuario"];
 					$_SESSION["usuario"]=$respuesta["usuario"];
 					$_SESSION["clave"]=$respuesta["clave"];
-					$_SESSION["id_rol"]=$respuesta["id_rol"];
+					$_SESSION["rol"]=$respuesta["rol"];
 
 
 					echo '<script> 
