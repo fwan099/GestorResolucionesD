@@ -64,6 +64,55 @@ class UsuariosM extends ConexionDB{
 		$pdo->close();
 
 	}
+	// LLamar datos para editarlos
+
+	static public function EUsuariosM($tablaDB,$item,$valor){
+
+		if($item!=null){
+			$pdo = ConexionDB::cDB()->prepare("SELECT id_usuario, usuario, clave,rol FROM $tablaDB WHERE $item = :$item ");
+			$pdo ->bindParam(":".$item,$valor,PDO::PARAM_STR);
+
+			$pdo->execute();
+
+
+			return $pdo->fetch();
+
+
+		}else{
+
+			$pdo = ConexionDB::cDB()->prepare("SELECT id_usuario, usuario, clave, rol  FROM $tablaDB  ");
+		
+
+			$pdo->execute();
+
+			return $pdo->fetchAll();
+
+
+		}
+
+		$pdo->close();
+	}
+
+	//Actualizar Usuarios
+	static public function ActualizarUsuariosM($tablaDB,$datosC){
+
+		$pdo = ConexionDB::cDB()->prepare("UPDATE $tablaDB SET  usuario =:usuario, clave=:clave, rol=:rol WHERE id_usuario=:id_usuario");
+
+		$pdo->bindParam(":id_usuario", $datosC["id_usuario"],PDO::PARAM_INT);
+
+		$pdo->bindParam(":usuario", $datosC["usuario"],PDO::PARAM_STR);
+		$pdo->bindParam(":clave", $datosC["clave"],PDO::PARAM_STR);
+		$pdo->bindParam(":rol", $datosC["rol"],PDO::PARAM_STR);
+
+		if($pdo->execute()){
+			return true;
+		}else{
+			return false;
+		}
+
+		$pdo->close();
+
+	}
 
 	
 }

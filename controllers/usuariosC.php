@@ -58,7 +58,7 @@
 	            echo ' <td>'.($value["rol"]).'</td>
 	                <td>
 	                  <div class="btn-group">
-                		<button class="btn btn-success" ><i class="fas fa-pencil-alt" data-toggle="modal" data-target="#EditarU"></i></button>
+                		<button class="btn btn-success EditarU" Uid="'.($value["id_usuario"]).'"><i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#EditarU"></i></button>
                			<button class="btn btn-danger BorrarU" Uid="'.($value["id_usuario"]).'" ><i class="fa-solid fa-trash-can"></i></button>
             		  </div>
 	                </td>
@@ -115,5 +115,43 @@
 			}
 		}
 	}
+	//Llamar datos para editarlos
+	static public function EUsuariosC($item,$valor){
+
+		$tablaDB = "usuario";
+
+		$respuesta = UsuariosM::EUsuariosM($tablaDB,$item,$valor);
+
+		return $respuesta;
+
+	}
+	//Actualizar Usuarios
+	public function ActualizarUsuariosC(){
+
+		if(isset($_POST["Uid"])){
+
+			$tablaDB = "usuario";
+
+			$datosC = array("id_usuario"=>$_POST["Uid"],"usuario"=>$_POST["usuarioE"],"clave"=>$_POST["claveE"],"rol"=>$_POST["rolE"]);
+
+			$respuesta = UsuariosM::ActualizarUsuariosM($tablaDB,$datosC);
+
+			if($respuesta==true){
+
+				echo '<script> 
+
+					window.location= "usuarios"; 
+
+
+					</script>';
+			}else{
+				echo 'ERROR AL EDITAR USUARIO';
+			}
+
+
+
+		}
+	}
+
 	}
 ?>

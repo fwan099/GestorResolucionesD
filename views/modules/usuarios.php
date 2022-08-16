@@ -46,6 +46,11 @@
                 $verU = new UsuariosC();
                 $verU->VerUsuariosC();
 
+                $item = null;
+                $valor = null;
+
+                $editarU =  UsuariosC::EUsuariosC($item,$valor);
+
           ?>
 			  
 			  </tbody>
@@ -88,7 +93,6 @@
               <div class="form-group">
                 <h5>Seleccion el Rol</h5>
                 <select class="form-control " name="rolN">
-                  <option>Seleccionar rol...</option>
                   <option value="Administrador">Administrador</option>
                   <option value="Jefe de Gestion Institucional">Buscador</option>
                   
@@ -121,3 +125,58 @@
   $borrarU = new UsuariosC();
   $borrarU->BorrarUsuariosC();
    ?>
+
+      <!-- Modal Editar usuarios -->
+<div class="modal fade" role="dialog" id="EditarU">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form method="post" role="form" enctype="multipart/form-data">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Editar Usuario</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="box-body">
+              <div class="form-group">
+                <h5>DNI</h5>
+                <input type="text" class="form-control" id="usuarioE" name="usuarioE" required>
+                <input type="hidden" id="Uid" name="Uid">
+              </div>
+              <div class="form-group">
+                <h5>Contraseña</h5>
+                <input type="text" class="form-control " id="claveE" name="claveE" required>
+              </div>
+              
+              <div class="form-group">
+                <h5>Seleccion el Rol</h5>
+                <select class="form-control " name="rolE">
+                  <option id="rolE"></option>
+                  <option value="Administrador">Administrador</option>
+                  <option value="Jefe de Gestion Institucional">Buscador</option>
+                  
+                </select>
+                
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            
+          </div>
+          <?php 
+            $actualizarU = new UsuariosC();
+            $actualizarU->ActualizarUsuariosC();
+         
+           ?>
+          
+        </form>
+        
+      </div>
+      
+    </div>
+    
+  </div>
