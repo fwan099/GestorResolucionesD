@@ -43,5 +43,77 @@
 			}
 		}
 		}
+
+		//Ver usuarios
+	public function VerUsuariosC(){
+		$tablaDB = "usuario";
+		$respuesta = UsuariosM::VerUsuariosM($tablaDB);
+
+		foreach($respuesta as $key => $value){
+			echo '<tr>
+	                <td>'.($key+1).'</td>
+	                <td>'.($value["usuario"]).'</td>
+	                <td>'.($value["clave"]).'</td>';
+	                
+	            echo ' <td>'.($value["rol"]).'</td>
+	                <td>
+	                  <div class="btn-group">
+                		<button class="btn btn-success" ><i class="fas fa-pencil-alt" data-toggle="modal" data-target="#EditarU"></i></button>
+               			<button class="btn btn-danger BorrarU" Uid="'.($value["id_usuario"]).'" ><i class="fa-solid fa-trash-can"></i></button>
+            		  </div>
+	                </td>
+              </tr>';
+		}
+	}
+		// Crear Usuarios
+
+	public function CrearUsuariosC(){
+
+		if(isset($_POST["usuarioN"])){
+
+			$tablaDB = "usuario";
+
+			$datosC = array("usuario"=>$_POST["usuarioN"],"clave"=>$_POST["claveN"],"rol"=>$_POST["rolN"]);
+
+			$respuesta = UsuariosM::CrearUsuariosM($tablaDB,$datosC);
+
+			if($respuesta==true){
+
+				echo '<script> 
+
+					window.location= "usuarios"; 
+
+
+					</script>';
+			}else{
+				echo 'ERROR AL CREAR USUARIO';
+			}
+		}
+	}
+
+	//Borrar usuarios
+	public function BorrarUsuariosC(){
+
+		if(isset($_GET["Uid"])){
+			$tablaDB = "usuario";
+			$datosC = $_GET["Uid"];
+
+
+			$respuesta = UsuariosM::BorrarUsuariosM($tablaDB,$datosC);
+
+
+			if($respuesta==true){
+
+				echo '<script> 
+
+					window.location= "usuarios"; 
+
+
+					</script>';
+			}else{
+				echo 'ERROR AL BORRAR USUARIO';
+			}
+		}
+	}
 	}
 ?>

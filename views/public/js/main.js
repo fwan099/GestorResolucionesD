@@ -26,5 +26,13 @@ var y = window.matchMedia("(min-width: 830px)")
 
 }
 
+//borrar usuarios
+
+$(".TB").on("click",".BorrarU" , function (){
+    var Uid = $(this).attr("Uid");
+
+    window.location= "index.php?url=usuarios&Uid="+Uid;
+})
+
 
 

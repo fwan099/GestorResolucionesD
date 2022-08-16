@@ -19,26 +19,34 @@
           </button> 
         </div>
         <div class="box-body py-3" style="overflow: auto;">
-          <table class="table">
+          <table class="table TB">
 			  <thead>
 			    <tr>
-			      <th scope="col">#</th>
+			      <th scope="col">N°</th>
 			      <th scope="col">Usuario</th>
 			      <th scope="col">Contraseña</th>
             <th scope="col">Rol</th>
-			      <th scope="col">Editar</th>
-			      <th scope="col">Eliminar</th>
+			      <th scope="col">Editar/Eliminar</th>
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr>
+			 <!--   <tr>
 			      <th scope="row">1</th>
 			      <td>Admin</td>
 			      <td>32A1</td>
             <td>Administrador</td>
-			      <td><button class="btn btn-success" ><i class="fas fa-pencil-alt" data-toggle="modal" data-target="#EditarU"></i></button></td>
-			       <td><button class="btn btn-danger" ><i class="fa-solid fa-trash-can" data-toggle="modal" data-target="#EditarU"></i></button></td>
-			    </tr>
+			      <td>
+              <div class="btn-group">
+                <button class="btn btn-success" ><i class="fas fa-pencil-alt" data-toggle="modal" data-target="#EditarU"></i></button>
+                <button class="btn btn-danger" ><i class="fa-solid fa-trash-can" data-toggle="modal" data-target="#EditarU"></i></button>
+              </div>
+            </td>
+			    </tr>-->
+          <?php 
+                $verU = new UsuariosC();
+                $verU->VerUsuariosC();
+
+          ?>
 			  
 			  </tbody>
 			</table>
@@ -74,7 +82,7 @@
               </div>
               <div class="form-group">
                 <h5>Contraseña</h5>
-                <input type="password" class="form-control " name="claveN" required>
+                <input type="text" class="form-control " name="claveN" required>
               </div>
               
               <div class="form-group">
@@ -96,6 +104,10 @@
              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
             
           </div>
+          <?php 
+            $crearU = new UsuariosC();
+            $crearU->CrearUsuariosC();
+           ?>
           
         </form>
         
@@ -104,3 +116,8 @@
     </div>
     
   </div>
+
+  <?php 
+  $borrarU = new UsuariosC();
+  $borrarU->BorrarUsuariosC();
+   ?>
