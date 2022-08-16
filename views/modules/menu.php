@@ -1,6 +1,6 @@
 
  <div class="contenedor">   
-    <nav class="main-menu">
+    <nav class="main-menu" id="myDIV" >
                 <ul>
                     <li>
                         <a href="inicio">

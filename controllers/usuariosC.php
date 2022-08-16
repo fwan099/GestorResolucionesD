@@ -10,8 +10,8 @@
 				$tablaDB = "usuario";
 
 				$respuesta = UsuariosM::IngresarUsuariosM($datosC, $tablaDB);
-
-				if($respuesta["usuario"]==$_POST["usuario-ing"] && $respuesta["clave"]==$_POST["clave-ing"]  ){
+				if(is_array($respuesta)){
+					if($respuesta["usuario"]==$_POST["usuario-ing"] && $respuesta["clave"]==$_POST["clave-ing"]  ){
 
 					$_SESSION["Ingreso"]=true;
 
@@ -32,6 +32,13 @@
   							Ups! Usuario o contraseña incorrecta
 						</div>';
 				}
+			}else{
+				echo '<div class="alert alert-danger text-center" role="alert">
+  							Ups! Usuario o contraseña incorrecta
+						</div>';
+			}
+
+				
 				
 			}
 		}

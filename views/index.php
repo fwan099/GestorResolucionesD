@@ -21,7 +21,7 @@ session_start();
             include "modules/menu.php";
 
             if(isset($_GET["url"])){
-                if($_GET["url"]=="salir" || $_GET["url"]=="buscarRes" || $_GET["url"]=="subirRes" || $_GET["url"]=="ingresarMotivo"|| $_GET["url"]=="personal"|| $_GET["url"]=="usuarios" || $_GET["url"]=="perfil"){
+                if($_GET["url"]=="salir" || $_GET["url"]=="inicio" || $_GET["url"]=="buscarRes" || $_GET["url"]=="subirRes" || $_GET["url"]=="ingresarMotivo"|| $_GET["url"]=="personal"|| $_GET["url"]=="usuarios" || $_GET["url"]=="perfil"){
                     include "modules/".$_GET["url"].".php";
                 }
 

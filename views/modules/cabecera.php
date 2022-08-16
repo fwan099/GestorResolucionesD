@@ -1,7 +1,11 @@
 <header class="cabecera" >
-  <div class="container d-flex justify-content-between align-items-center h-100">
+  <div class="container-fluid d-flex justify-content-between align-items-center h-100">
       <div>
-      <a href="inicio" class="text-white text-decoration-none">UGEL YUNGUYO</a>
+        <a href="inicio" class="text-white text-decoration-none">
+          <span class="log_text"><b>UGEL </b>YUNGUYO</span>
+        </a>
+        <button onclick="myFunction()" class="bars-btn"><i class="fa-solid fa-bars"></i></button>
+      
     </div>
     <nav>
       <div class="salir icon-p">

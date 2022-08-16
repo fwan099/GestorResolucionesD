@@ -51,6 +51,11 @@
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.16);
     position: relative;
 }
+.contenedor_cab div{
+ background: rgba(213,23,123,.3);
+ height: 100%;
+ width: 250px;
+}
 .salir i{
     font-size: 20px;
 }
@@ -81,11 +86,19 @@ body{
     margin-right: auto;
     width: 100%;
     margin:8px 12px !important;
+    overflow-x: hidden;
 }
 .content-header h3{
     color: #15BE6D;
 }
-
+.log_text{
+    font-size: 20px !important;
+}
+.bars-btn{
+    background-color: transparent;
+    color: #fff;
+    border: none;
+}
 
 @media (max-width: 830px){
     .menu-admin{
@@ -94,6 +107,12 @@ body{
         -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.16);
         -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.16);
         box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.16);
+    }
+    #myDIV{
+        display: none;
+        position: relative;
+        overflow:initial;
+        width: 180px;
     }
     .icon-p i{
         display:inline-block;
