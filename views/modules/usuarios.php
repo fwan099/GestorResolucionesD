@@ -94,7 +94,7 @@
                 <h5>Seleccion el Rol</h5>
                 <select class="form-control " name="rolN">
                   <option value="Administrador">Administrador</option>
-                  <option value="Jefe de Gestion Institucional">Buscador</option>
+                  <option value="Buscador">Buscador</option>
                   
                 </select>
                 
@@ -153,7 +153,7 @@
                 <select class="form-control " name="rolE">
                   <option id="rolE"></option>
                   <option value="Administrador">Administrador</option>
-                  <option value="Jefe de Gestion Institucional">Buscador</option>
+                  <option value="Buscador">Buscador</option>
                   
                 </select>
                 

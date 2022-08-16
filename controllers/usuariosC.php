@@ -137,13 +137,16 @@
 			$respuesta = UsuariosM::ActualizarUsuariosM($tablaDB,$datosC);
 
 			if($respuesta==true){
-
-				echo '<script> 
-
-					window.location= "usuarios"; 
-
-
-					</script>';
+				if($_GET["url"]=="usuarios"){
+					echo '<script> 
+						window.location= "usuarios"; 
+						</script>';
+				}else{
+					echo '<script> 
+						window.location= "perfil"; 
+						</script>';
+				}
+				
 			}else{
 				echo 'ERROR AL EDITAR USUARIO';
 			}
@@ -151,6 +154,34 @@
 
 
 		}
+	}
+
+
+	//ver perfil del usuario actual
+
+	public function VerPerfilC(){
+
+		$tablaDB = "usuario";
+
+		$id = $_SESSION["id_usuario"];
+
+		$respuesta = UsuariosM::VerPerfilM($tablaDB,$id);
+
+
+		echo '<tr>
+	                <td>'.($respuesta["usuario"]).'</td>
+	                <td>'.($respuesta["clave"]).'</td>
+	                <td>'.($respuesta["rol"]).'</td>';
+
+
+	            echo '
+	                <td>
+	                  <div class="btn-group">
+	                     <button class="btn btn-success EditarU" Uid="'.($respuesta["id_usuario"]).'"><i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#EditarU"></i></button>
+	                    
+	                  </div>
+	                </td>
+              </tr>';
 	}
 
 	}

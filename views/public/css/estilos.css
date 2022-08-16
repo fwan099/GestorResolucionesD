@@ -99,6 +99,9 @@ body{
     color: #fff;
     border: none;
 }
+.input-disable{
+    cursor: no-drop;
+}
 
 @media (max-width: 830px){
     .menu-admin{

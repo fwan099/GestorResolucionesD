@@ -2,9 +2,12 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h3>
-        BIENVENIDO 
+      <h3 class="text-center">
+        BIENVENIDO
       </h3>
+      <h4 class="text-center">
+        INGRESASTE COMO <?php echo strtoupper($_SESSION["rol"]) ?>
+      </h4>
      
     </section>
 
