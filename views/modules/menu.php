@@ -21,7 +21,7 @@
                       
                     </li>
                     <li class="has-subnav">
-                        <a href="subirRes">
+                        <a href="cargarRes">
                             <i class="fa fa-cloud-upload fa-2x"></i>
                             <span class="nav-text">
                                 Subir Resolucion
@@ -37,14 +37,6 @@
                             </span>
                         </a>
                         
-                    </li>
-                    <li>
-                        <a href="personal">
-                            <i class="fa fa-male fa-2x"></i>
-                            <span class="nav-text">
-                                Personal
-                            </span>
-                        </a>
                     </li>
                     <li class="has-subnav">
                         <a href="usuarios">

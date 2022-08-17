@@ -13,6 +13,7 @@ session_start();
     <link rel="stylesheet" href="./views/public/css/bootstrap.min.css">
     <link rel="stylesheet" href="./views/public/css/estilos.css"> 
     <link rel="stylesheet" href="./views/public/css/sliderbar.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
     <?php
@@ -21,7 +22,7 @@ session_start();
             include "modules/menu.php";
 
             if(isset($_GET["url"])){
-                if($_GET["url"]=="salir" || $_GET["url"]=="inicio" || $_GET["url"]=="buscarRes" || $_GET["url"]=="subirRes" || $_GET["url"]=="ingresarMotivo"|| $_GET["url"]=="personal"|| $_GET["url"]=="usuarios" || $_GET["url"]=="perfil"){
+                if($_GET["url"]=="salir" || $_GET["url"]=="inicio" || $_GET["url"]=="buscarRes" || $_GET["url"]=="ingresarMotivo"|| $_GET["url"]=="cargarRes"|| $_GET["url"]=="usuarios" || $_GET["url"]=="perfil"){
                     include "modules/".$_GET["url"].".php";
                 }
 

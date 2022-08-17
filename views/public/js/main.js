@@ -66,5 +66,28 @@ $(".TB").on("click",".EditarU", function(){
     });
 })
 
+//------------------------PERSONAL----------------------------------------//
+
+//Consumo de API
+$("#btn-buscar").click(function(){
+    let dni = $("#dni-buscar").val();
+
+    $.ajax({
+        url: 'controllers/reniecC.php',
+        type: 'post',
+        data: 'dni='+dni,
+        dataType: 'json',
+        success: function(r){
+            if(r.success){
+                $("#nombresN").val(r.result.nombres);
+                $("#paternoN").val(r.result.paterno);
+                $("#maternoN").val(r.result.materno);
+                $("#dniN").val(dni);
 
 
+            }else{
+                alert(r.message);
+            }
+        }
+    })
+});
