@@ -28,21 +28,31 @@
             <th scope="col">DNI</th>
             <th scope="col">Fecha</th>
             <th scope="col">Documento</th>
-            <th scope="col">Editar</th>
-            <th scope="col">Eliminar</th>
+            <th scope="col">Editar / Eliminar</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+        <!--  <tr>
             <th scope="row">1</th>
             <td>0457</td>
             <td>SEPELIO Y LUTO</td>
             <td>73744393</td>
             <td>25-04-2022</td>
             <td><a href="#">Descargar</a></td>
-            <td><button class="btn btn-success " ><i class="fas fa-pencil-alt" data-toggle="modal" data-target="#EditarU"></i></button></td>
-            <td><button class="btn btn-danger" ><i class="fa-solid fa-trash-can" data-toggle="modal" data-target="#EditarU"></i></button></td>
-          </tr>
+            <td>
+              <div class="btn-group">
+                <button class="btn btn-success" ><i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#EditarMotivo"></i></button>
+                <button class="btn btn-danger" ><i class="fa-solid fa-trash-can" data-toggle="modal" data-target="#EditarU"></i></button>
+              </div>
+            </td>
+          </tr>-->
+
+            <?php 
+                $verR = new ResolucionC();
+                $verR->VerResolucionC();
+
+
+          ?>
         </tbody>
       </table>
         </div>
@@ -75,19 +85,19 @@
             <div class="box-body">
               <div class="form-group mb-2">
                 <h6>Nombres</h6>
-                <input type="text" class="form-control " name="nombresN" id="nombresN" disabled>
+                <input type="text" class="form-control " name="nombresN" id="nombresN" >
               </div>
               <div class="form-group mb-2">
                 <h6>Apellido Paterno</h6>
-                <input type="text" class="form-control " name="paternoN" id="paternoN" disabled>
+                <input type="text" class="form-control " name="paternoN" id="paternoN" >
               </div>
               <div class="form-group mb-2">
                 <h6>Apellido Materno</h6>
-                <input type="text" class="form-control " name="maternoN" id="maternoN" disabled>
+                <input type="text" class="form-control " name="maternoN" id="maternoN" >
               </div>
               <div class="form-group mb-2">
                 <h6>DNI</h6>
-                <input type="text" class="form-control " name="dniN" id="dniN" disabled>
+                <input type="text" class="form-control " name="dniN" id="dniN" >
               </div>
               <div class="d-flex">
                 <div class="form-group mb-2 w-50 me-3">
@@ -100,9 +110,17 @@
               </div>
               </div>
               
-              <div class="form-group mb-2">
-                <h6>Motivo </h6>
-                <input type="text" class="form-control " name="motivoN" required>
+              <div class="form-group">
+                <h6>Seleccionar Motivo</h6>
+                <select class="form-select"  name="motivoN">
+                <!--  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>-->
+                  <?php 
+                    $verML = new MotivosC();
+                    $verML->VerMotivosListC();
+                   ?>
+                </select>
               </div>
               <div class="form-group mb-2">
               <h6>Documento</h6>
@@ -117,6 +135,10 @@
              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
             
           </div>
+          <?php 
+            $crearR = new ResolucionC();
+            $crearR->CrearResolucionC();
+           ?>
           
         </form>
         

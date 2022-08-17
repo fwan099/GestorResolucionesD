@@ -91,3 +91,38 @@ $("#btn-buscar").click(function(){
         }
     })
 });
+
+//------------------------MOTIVOS DE RESOLUCION----------------------------------------//
+//Llamar datos para editar
+
+$(".TB").on("click",".EditarM", function(){
+    var Uid = $(this).attr("Uid");
+    var datos = new FormData();
+
+    datos.append("Uid",Uid);
+
+    $.ajax({
+        url :"Ajax/motivosA.php",
+        method:"POST",
+        data: datos,
+        cache:false,
+        contentType: false,
+        processData: false,
+        dataType: "json",
+        success: function(respuesta){
+
+
+            $("#motivoE").val(respuesta["detalle"]);
+
+            $("#Uid").val(respuesta["id_tipo_resolucion"]);
+
+        }
+    });
+})
+//llamar para borrar
+
+$(".TB").on("click",".BorrarM" , function (){
+    var Uid = $(this).attr("Uid");
+
+    window.location= "index.php?url=ingresarMotivo&Uid="+Uid;
+})
