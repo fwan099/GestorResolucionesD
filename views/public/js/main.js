@@ -66,7 +66,7 @@ $(".TB").on("click",".EditarU", function(){
     });
 })
 
-//------------------------PERSONAL----------------------------------------//
+//------------------------PERSONAL y RESOLUCION----------------------------------------//
 
 //Consumo de API
 $("#btn-buscar").click(function(){
@@ -91,7 +91,46 @@ $("#btn-buscar").click(function(){
         }
     })
 });
+//borrar RESLUCION
 
+$(".TB").on("click",".BorrarR" , function (){
+    var Uid = $(this).attr("Uid");
+
+    window.location= "index.php?url=cargarRes&Uid="+Uid;
+})
+//Llamar datos para editar
+
+$(".TB").on("click",".EditarR", function(){
+    var Uid = $(this).attr("Uid");
+    var datos = new FormData();
+
+    datos.append("Uid",Uid);
+
+    $.ajax({
+        url :"Ajax/resolucionA.php",
+        method:"POST",
+        data: datos,
+        cache:false,
+        contentType: false,
+        processData: false,
+        dataType: "json",
+        success: function(respuesta){
+
+
+            $("#nombresE").val(respuesta["nombres"]);
+            $("#Uid").val(respuesta["id_resolucion"]);
+            $("#paternoE").val(respuesta["paterno"]);
+            $("#maternoE").val(respuesta["materno"]);
+            $("#dniE").val(respuesta["dni"]);
+            $("#numeroE").val(respuesta["numero_res"]);
+            $("#fechaE").val(respuesta["fecha"]);
+            $("#motivoE").html(respuesta["detalle"]);
+            $("#motivoE").val(respuesta["detalle"]);
+            
+
+        }
+    });
+})
 //------------------------MOTIVOS DE RESOLUCION----------------------------------------//
 //Llamar datos para editar
 
@@ -126,3 +165,4 @@ $(".TB").on("click",".BorrarM" , function (){
 
     window.location= "index.php?url=ingresarMotivo&Uid="+Uid;
 })
+

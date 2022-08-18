@@ -50,28 +50,102 @@
 		$respuesta = ResolucionM::VerResolucionM($tablaDB);
 
 		foreach($respuesta as $key => $value){
-			echo '<tr>
-	                <td>'.($key+1).'</td>
+			echo '<tr class="text-center">
 	                <td>'.($value["numero_res"]).'</td>
+	                <td>'.($value["fecha"]).'</td>
 	                <td>'.($value["detalle"]).'</td>
 	                <td>'.($value["dni"]).'</td>
-	                <td>'.($value["fecha"]).'</td>
-	                <td>'.($value["doc_url"]).'</td>';
+	                <td>'.($value["nombres"]). ' ' .($value["paterno"]).' ' .($value["materno"]).'</td>
+	                
+	                <td class="text-center"><a class="link-doc " target="_blank" href="'.($value["doc_url"]).'"><i class="fa-solid fa-file-pdf"></i></a></td>';
 	                
 	            echo ' 
 	                <td>
 	                  <div class="btn-group">
-                		<button class="btn btn-success EditarU" Uid="'.($value["id_resolucion"]).'"><i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#EditarU"></i></button>
-               			<button class="btn btn-danger BorrarU" Uid="'.($value["id_resolucion"]).'" ><i class="fa-solid fa-trash-can"></i></button>
+                		<button class="btn btn-success EditarR" Uid="'.($value["id_resolucion"]).'"><i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#EditarR"></i></button>
+               			<button class="btn btn-danger BorrarR" Uid="'.($value["id_resolucion"]).'" ><i class="fa-solid fa-trash-can"></i></button>
             		  </div>
 	                </td>
               </tr>';
 		}
 	}
+	//Borrar resolucion
+	public function BorrarResolucionC(){
+
+		if(isset($_GET["Uid"])){
+			$tablaDB = "resolucion";
+			$datosC = $_GET["Uid"];
 
 
+			$respuesta = ResolucionM::BorrarResolucionM($tablaDB,$datosC);
 
 
+			if($respuesta==true){
+
+				echo '<script> 
+
+					window.location= "cargarRes"; 
+
+
+					</script>';
+			}else{
+				echo 'ERROR AL BORRAR RESOLUCION';
+			}
+		}
+	}
+
+
+	//Llamar datos para editarlos
+	static public function EResolucionC($item,$valor){
+
+		$tablaDB = "resolucion";
+
+		$respuesta = ResolucionM::EResolucionM($tablaDB,$item,$valor);
+
+		return $respuesta;
+
+	}
+	//Actualizar Resolucion
+	public function ActualizarResolucionC(){
+
+		if(isset($_POST["Uid"])){
+ 			$rutaPdf="";
+
+ 			if(isset($_FILES["documentoE"]["tmp_name"]) && !empty($_FILES["documentoE"]["tmp_name"])){
+
+ 				if($_FILES["documentoE"]["type"] == "application/pdf"){
+
+ 					$nombre = mt_rand(10,999);
+ 					$rutaPdf = "views/public/docs/O".$nombre.".pdf";
+ 					$documento = $_FILES["documentoE"]["tmp_name"];
+
+ 					move_uploaded_file($documento,$rutaPdf);
+
+
+ 				}
+ 			}
+
+ 			$tablaDB = "resolucion";
+
+ 			$datosC = array("fecha"=>$_POST["fechaE"],"doc_url"=>$rutaPdf,"id_tipo_resolucion"=>$_POST["motivoE"],"numero_res"=>$_POST["numeroE"],"dni"=>$_POST["dniE"],"nombres"=>$_POST["nombresE"],"paterno"=>$_POST["paternoE"],"materno"=>$_POST["maternoE"]);
+
+ 			$respuesta = ResolucionM::ActualizarResolucionM($tablaDB,$datosC);
+
+ 			if($respuesta == true){
+
+				echo ' <script>
+
+					window.location = "cargarRes";
+
+				</script>';
+			}else{
+
+				echo 'ERROR AL ACTUALIZAR RESOLUCION';
+			}
+
+
+		}
+	}
 
 
 
