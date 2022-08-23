@@ -1,10 +1,23 @@
+<?php 
+
+if ($_SESSION["rol"] != "Administrador") {
+
+  echo '<script>
+        window.location ="inicio"
+
+  </script>';
+  
+}
+
+
+ ?>
 	 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h3>
+      <h4 class="fw-bold ">
         Gestor de Usuarios
-      </h3>
+      </h4>
      
     </section>
 
@@ -83,7 +96,7 @@
             <div class="box-body">
               <div class="form-group">
                 <h5>DNI</h5>
-                <input type="text" class="form-control" name="usuarioN" required>
+                <input type="text" class="form-control" name="usuarioN" required autocomplete="off">
               </div>
               <div class="form-group">
                 <h5>Contraseña</h5>

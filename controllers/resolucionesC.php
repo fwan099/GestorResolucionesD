@@ -13,8 +13,8 @@
 
  				if($_FILES["documentoN"]["type"] == "application/pdf"){
 
- 					$nombre = mt_rand(10,999);
- 					$rutaPdf = "views/public/docs/O".$nombre.".pdf";
+ 					$nombre ="RESN°".$_POST["numeroN"]."-".$_POST["dniN"]."_".mt_rand(10,999);
+ 					$rutaPdf = "views/public/docs/".$nombre.".pdf";
  					$documento = $_FILES["documentoN"]["tmp_name"];
 
  					move_uploaded_file($documento,$rutaPdf);
@@ -57,7 +57,7 @@
 	                <td>'.($value["dni"]).'</td>
 	                <td>'.($value["nombres"]). ' ' .($value["paterno"]).' ' .($value["materno"]).'</td>
 	                
-	                <td class="text-center"><a class="link-doc " target="_blank" href="'.($value["doc_url"]).'"><i class="fa-solid fa-file-pdf"></i></a></td>';
+	                <td class="text-center"><a class="link-doc " download="" href="'.($value["doc_url"]).'"><i class="fa-solid fa-file-pdf"></i></a></td>';
 	                
 	            echo ' 
 	                <td>
@@ -109,25 +109,37 @@
 	public function ActualizarResolucionC(){
 
 		if(isset($_POST["Uid"])){
- 			$rutaPdf="";
 
- 			if(isset($_FILES["documentoE"]["tmp_name"]) && !empty($_FILES["documentoE"]["tmp_name"])){
+			$rutaPdf = $_POST["documentoActual"];
 
- 				if($_FILES["documentoE"]["type"] == "application/pdf"){
+	 		if(isset($_FILES["documentoE"]["tmp_name"]) &&!empty($_FILES["documentoE"]["tmp_name"])){
 
- 					$nombre = mt_rand(10,999);
- 					$rutaPdf = "views/public/docs/O".$nombre.".pdf";
- 					$documento = $_FILES["documentoE"]["tmp_name"];
+	 			if(!empty($_POST["documentoActual"])){
+
+	 				unlink($_POST["documentoActual"]);
+	 			}else{
+	 				mkdir($direc,0755);
+	 			}
+
+	 			if($_FILES["documentoE"]["type"]=="application/pdf"){
+
+	 				$nombre ="RESN°".$_POST["numeroE"]."-".$_POST["dniE"]."_".mt_rand(10,999);
+
+					$rutaPdf = "views/public/docs/".$nombre.".pdf";
+
+					$documento = $_FILES["documentoE"]["tmp_name"];
 
  					move_uploaded_file($documento,$rutaPdf);
+	 			}
 
-
- 				}
- 			}
+	 			
+	 		}
+	 			
+	 		
 
  			$tablaDB = "resolucion";
 
- 			$datosC = array("fecha"=>$_POST["fechaE"],"doc_url"=>$rutaPdf,"id_tipo_resolucion"=>$_POST["motivoE"],"numero_res"=>$_POST["numeroE"],"dni"=>$_POST["dniE"],"nombres"=>$_POST["nombresE"],"paterno"=>$_POST["paternoE"],"materno"=>$_POST["maternoE"]);
+ 			$datosC = array("id_resolucion"=>$_POST["Uid"],"fecha"=>$_POST["fechaE"],"doc_url"=>$rutaPdf,"id_tipo_resolucion"=>$_POST["motivoE"],"numero_res"=>$_POST["numeroE"],"dni"=>$_POST["dniE"],"nombres"=>$_POST["nombresE"],"paterno"=>$_POST["paternoE"],"materno"=>$_POST["maternoE"]);
 
  			$respuesta = ResolucionM::ActualizarResolucionM($tablaDB,$datosC);
 
@@ -140,7 +152,7 @@
 				</script>';
 			}else{
 
-				echo 'ERROR AL ACTUALIZAR RESOLUCION';
+				echo ' ERROR ';
 			}
 
 

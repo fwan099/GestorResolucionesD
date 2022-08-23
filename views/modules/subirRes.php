@@ -2,7 +2,7 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h3>
+      <h3 class="fw-bold ">
         Gestor de Resolucion
       </h3>
      

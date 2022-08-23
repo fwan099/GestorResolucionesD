@@ -1,4 +1,25 @@
+<?php
+ if($_SESSION["rol"] != "Administrador"){
+    echo '
 
+ <style type="text/css">
+
+  .sidebar-menu li:nth-child(9){
+    background-color: rgba(100, 100, 100, 5.0);
+
+  }
+
+
+  .main-menu li:nth-child(3) a{cursor: no-drop !important;display:none;}
+  .main-menu li:nth-child(4) a{cursor: no-drop !important;display:none;}
+  .main-menu li:nth-child(5) a{cursor: no-drop !important;display:none;}
+ 
+ </style>
+    ';
+
+ }
+
+?>
  <div class="contenedor">   
     <nav class="main-menu" id="myDIV" >
                 <ul>

@@ -126,6 +126,8 @@ $(".TB").on("click",".EditarR", function(){
             $("#fechaE").val(respuesta["fecha"]);
             $("#motivoE").html(respuesta["detalle"]);
             $("#motivoE").val(respuesta["detalle"]);
+            $("#motivoE").attr("value",respuesta["id_tipo_resolucion"]);
+            $("#documentoActual").val(respuesta["doc_url"]);
             
 
         }

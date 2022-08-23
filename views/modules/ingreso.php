@@ -24,7 +24,7 @@
                 <form class="bg-login p-4 rounded-3" method="post">
                     <h4 class="text-center text-white pb-3 text-roboto">Iniciar Sesion</h4>
                     <div class="form-group mb-4">
-                      <input type="text" class="form-control login-input" name="usuario-ing" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario" >
+                      <input type="text" class="form-control login-input" name="usuario-ing" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario" autocomplete="off" >
                     </div>
                     <div class="form-group mb-4">
                       <input type="password" class="form-control login-input" name="clave-ing" id="exampleInputPassword1" placeholder="Contraseña">

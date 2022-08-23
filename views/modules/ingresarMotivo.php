@@ -1,10 +1,23 @@
+<?php 
+
+if ($_SESSION["rol"] != "Administrador") {
+
+  echo '<script>
+        window.location ="inicio"
+
+  </script>';
+  
+}
+
+
+ ?>
 	 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h3>
+      <h4 class="fw-bold ">
         Gestor de Motivos de Resolucion
-      </h3>
+      </h4>
      
     </section>
 
@@ -79,7 +92,7 @@
             <div class="box-body">
               <div class="form-group">
                 <h5>Motivo</h5>
-                <input type="text" class="form-control " name="motivoN" required style="text-transform:uppercase;" value=""  onkeyup="javascript:this.value=this.value.toUpperCase();">
+                <input type="text" class="form-control " name="motivoN" required style="text-transform:uppercase;" value=""  onkeyup="javascript:this.value=this.value.toUpperCase();" autocomplete="off">
               </div>
 
             </div>

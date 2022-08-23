@@ -2,9 +2,9 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h3>
+      <h4 class="fw-bold ">
         Gestor de Perfil
-      </h3>
+      </h4>
      
     </section>
 

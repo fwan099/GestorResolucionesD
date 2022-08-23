@@ -1,10 +1,24 @@
+ <?php 
+
+if ($_SESSION["rol"] != "Administrador") {
+
+  echo '<script>
+        window.location ="inicio"
+
+  </script>';
+  
+}
+
+
+ ?>
+
  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h3>
+      <h4 class="fw-bold ">
         Gestor de Resolucion
-      </h3>
+      </h4>
      
     </section>
 
@@ -19,7 +33,7 @@
           </button>
         </div>
         <div class="box-body py-3" style="overflow: auto;">
-          <table class="table TB">
+          <table class="table TB " id="resoluciones-table">
         <thead>
           <tr class="text-center">
             <th scope="col">N° Resolucion</th>
@@ -79,7 +93,7 @@
               <h5 class="modal-title text-center" id="exampleModalLabel">Registrar Resolucion</h5>
               <div class="form-group" >
                 <h5>Consulta DNI</h5>
-                <input type="text" class="form-control mb-3 " id="dni-buscar" >
+                <input type="text" class="form-control mb-3 " id="dni-buscar" autocomplete="off" >
                 <button type="button" id="btn-buscar" class="btn btn-lite w-100">Buscar en RENIEC</button>
               </div>
           </div>
@@ -88,28 +102,28 @@
             <div class="box-body">
               <div class="form-group mb-2">
                 <h6>Nombres</h6>
-                <input type="text" class="form-control " name="nombresN" id="nombresN" >
+                <input type="text" class="form-control " name="nombresN" id="nombresN" autocomplete="off">
               </div>
               <div class="form-group mb-2">
                 <h6>Apellido Paterno</h6>
-                <input type="text" class="form-control " name="paternoN" id="paternoN" >
+                <input type="text" class="form-control " name="paternoN" id="paternoN" autocomplete="off" >
               </div>
               <div class="form-group mb-2">
                 <h6>Apellido Materno</h6>
-                <input type="text" class="form-control " name="maternoN" id="maternoN" >
+                <input type="text" class="form-control " name="maternoN" id="maternoN" autocomplete="off" >
               </div>
               <div class="form-group mb-2">
                 <h6>DNI</h6>
-                <input type="text" class="form-control " name="dniN" id="dniN" >
+                <input type="text" class="form-control " name="dniN" id="dniN" autocomplete="off" >
               </div>
               <div class="d-flex">
                 <div class="form-group mb-2 w-50 me-3">
                 <h6>Numero de Resolucion</h6>
-                <input type="text" class="form-control " name="numeroN" required>
+                <input type="text" class="form-control " name="numeroN" required autocomplete="off">
               </div>
               <div class="form-group mb-2 w-50">
                 <h6 class="">Fecha</h6>
-                <input type="date" class="form-control " name="fechaN" required>
+                <input type="date" class="form-control " name="fechaN" required >
               </div>
               </div>
               
@@ -174,7 +188,7 @@
             <div class="box-body">
               <div class="form-group mb-2">
                 <h6>Nombres</h6>
-                <input type="text" class="form-control " name="nombresE" id="nombresE" >
+                <input type="text" class="form-control " name="nombresE" id="nombresE"  >
                 <input type="hidden" id="Uid" name="Uid">
               </div>
               <div class="form-group mb-2">
@@ -215,7 +229,8 @@
               </div>
               <div class="form-group mb-2">
               <h6>Documento</h6>
-              <input type="file" name="documentoE">
+              <input type="file" name="documentoE" id="documentoE">
+              <input type="hidden" name="documentoActual" id="documentoActual">
               </div>
             </div>
             
