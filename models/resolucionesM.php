@@ -37,7 +37,7 @@ require_once "ConexionDB.php";
 
     static public function VerResolucionM($tablaDB){
 
-        $pdo = ConexionDB::cDB()->prepare("SELECT * FROM $tablaDB join tipo_resolucion on resolucion.id_tipo_resolucion = tipo_resolucion.id_tipo_resolucion");
+        $pdo = ConexionDB::cDB()->prepare("SELECT *, DATE_FORMAT(fecha,'%d-%m-%Y') AS data FROM $tablaDB join tipo_resolucion on resolucion.id_tipo_resolucion = tipo_resolucion.id_tipo_resolucion ORDER BY fecha DESC");
 
         $pdo->execute();
 

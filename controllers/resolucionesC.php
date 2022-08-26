@@ -52,7 +52,7 @@
 		foreach($respuesta as $key => $value){
 			echo '<tr class="text-center">
 	                <td>'.($value["numero_res"]).'</td>
-	                <td>'.($value["fecha"]).'</td>
+	                <td>'.($value["data"]).'</td>
 	                <td>'.($value["detalle"]).'</td>
 	                <td>'.($value["dni"]).'</td>
 	                <td>'.($value["nombres"]). ' ' .($value["paterno"]).' ' .($value["materno"]).'</td>

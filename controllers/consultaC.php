@@ -23,7 +23,10 @@ class ConsultaC{
 	               		<td>'.($value["data"]).'</td>
 	                	<td>'.($value["detalle"]).'</td>
 	                	<td>'.($value["nombres"]). ' ' .($value["paterno"]).' ' .($value["materno"]).'</td>
-	                	<td class="text-center"><a class="link-doc " download="" href="'.($value["doc_url"]).'"><i class="fa-solid fa-file-pdf"></i></a></td>
+	                	<td class="text-center">
+	                	<a class="link-doc "  download="" href="'.($value["doc_url"]).'"><i class="fa-solid fa-file-pdf"></i></a>
+
+	                	</td>
 					</tr>
 
 			';
