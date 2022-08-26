@@ -7,6 +7,7 @@ class ConsultaC{
 			$año = $_POST["añoN"];
 			$opcion = $_POST["tipo-buscar"];
 
+
 		}else{
 			$consulta = "";
 			$año = "";

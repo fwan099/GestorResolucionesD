@@ -32,8 +32,8 @@ if ($_SESSION["rol"] != "Administrador") {
            Registrar Resolucion
           </button>
         </div>
-        <div class="box-body py-3" style="overflow: auto;">
-          <table class="table TB " id="resoluciones-table">
+        <div class="box-body py-3" >
+          <table class="table TB " style="overflow: auto; "id="resoluciones-table">
         <thead>
           <tr class="text-center">
             <th scope="col">N° Resolucion</th>

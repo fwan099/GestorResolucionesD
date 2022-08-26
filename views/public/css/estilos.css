@@ -8,6 +8,8 @@
 
 *{
 	  font-family: 'Titillium Web', sans-serif;
+      margin: 0;
+      box-sizing: border-box;
 }
 .body{
     background-image: linear-gradient(to left bottom, #15be6d, #009a90, #00718a, #314960, #2b2b2b);
@@ -136,5 +138,8 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     }
     .logout {
         display: none;
+    }
+    .col-sm-12{
+        overflow: auto;
     }
 }
