@@ -27,7 +27,7 @@
                       <input type="text" class="form-control login-input" name="usuario-ing" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario" autocomplete="off" >
                     </div>
                     <div class="form-group mb-4">
-                      <input type="password" class="form-control login-input" name="clave-ing" id="exampleInputPassword1" placeholder="Contraseña">
+                      <input type="password" class="form-control login-input" name="clave-ing" id="exampleInputPassword1" placeholder="Contraseña"  >
                     </div>
                     <button type="submit" class=" form-control btn btn-lite">Ingresar</button>
                     
